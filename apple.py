@@ -12,5 +12,7 @@ class Apple(pygame.sprite.Sprite):
         pygame.draw.rect(
             self.window,
             self.color,
-            pygame.Rect((position[0] * 20, position[1] * 20), (self.size, self.size)),
+            pygame.Rect((position[0] * 30, position[1] * 30), (self.size, self.size)),
+            width=7,
+            border_radius=3,
         )

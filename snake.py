@@ -2,13 +2,12 @@ import pygame
 
 
 class Snake(pygame.sprite.Sprite):
-    def __init__(self, window, color: pygame.Color, size):
+    def __init__(self, window, size):
         self.snake_positions = [
             (0, 0),
             (1, 0),
             (2, 0),
         ]
-        self.color = color
         self.size = size
         self.window = window
 
@@ -26,10 +25,17 @@ class Snake(pygame.sprite.Sprite):
             self.snake_positions.append((last_position[0], last_position[1] + 1))
 
     def draw(self):
+        i = 0
+        color = (0, 209, 0)
         for snake_position in self.snake_positions:
+            i += 1
+            if i % 2 == 0:
+                color = (0, 178, 0)
+            else:
+                color = (0, 209, 0)
             pygame.draw.rect(
                 self.window,
-                self.color,
+                color,
                 pygame.Rect(
                     (snake_position[0] * self.size, snake_position[1] * self.size),
                     (self.size, self.size),
