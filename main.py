@@ -41,6 +41,8 @@ def main(window=window):
                 break
 
         window.fill(black)
+        score = str(len(snake.snake_positions))
+        score_text = pygame.font.SysFont("Gill Sans", 75).render(score, True, red)
 
         # Handling apple spawning
 
@@ -71,6 +73,10 @@ def main(window=window):
             if moving_direction != "up":
                 moving_direction = "down"
 
+        window.blit(
+            score_text,
+            (WIDTH // 2 - score_text.get_width() // 2, 25),
+        )
         if (
             snake.snake_positions[-1] in snake.snake_positions[:-1]
             or snake.snake_positions[-1][0] < 0
