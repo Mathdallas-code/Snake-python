@@ -87,7 +87,6 @@ def game():
                 - math.sin(hover_value * 2) * 20,
             )
         )
-
         if (
             snake.snake_positions[-1] in snake.snake_positions[:-1]
             or snake.snake_positions[-1][0] < 0

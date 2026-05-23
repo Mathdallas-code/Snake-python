@@ -1,6 +1,7 @@
-import pygame
 import json
 import random
+
+import pygame
 
 data = json.load(open("data.json"))
 rows = data["rows"]
